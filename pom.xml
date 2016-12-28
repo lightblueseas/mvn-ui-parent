@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.15.0</version>
+		<version>2.18.0</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>mvn-ui-parent</artifactId>
-	<version>1.5.0</version>
+	<version>1.6.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2016</inceptionYear>
 
@@ -89,10 +89,10 @@
 		<swingx.version>1.6.1</swingx.version>
 		<spring.version>2.5.6</spring.version>
 		<!-- EXTENSIONS LIB versions -->
-		<extensions-lib.version>4.12.0</extensions-lib.version>
+		<extensions-lib.version>4.14.0</extensions-lib.version>
 		<file-worker.version>${extensions-lib.version}</file-worker.version>
-		<jcommons-lang.version>${extensions-lib.version}</jcommons-lang.version>
-		<swing-components.version>${extensions-lib.version}</swing-components.version>
+		<jcommons-lang.version>4.16.0</jcommons-lang.version>
+		<swing-components.version>4.16.0</swing-components.version>
 		<!-- IZPACK-MAVEN-PLUGIN versions -->
 		<izpack.version>5.0.8</izpack.version>
 		<izpack-panel.version>${izpack.version}</izpack-panel.version>
