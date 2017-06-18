@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.25.0-SNAPSHOT</version>
+		<version>2.26.0-SNAPSHOT</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -89,10 +89,10 @@
 		<swingx.version>1.6.1</swingx.version>
 		<spring.version>2.5.6</spring.version>
 		<!-- EXTENSIONS LIB versions -->
-		<extensions-lib.version>4.14.0</extensions-lib.version>
+		<extensions-lib.version>4.15.0</extensions-lib.version>
 		<file-worker.version>${extensions-lib.version}</file-worker.version>
-		<jcommons-lang.version>4.16.0</jcommons-lang.version>
-		<swing-components.version>4.17.0</swing-components.version>
+		<jcommons-lang.version>4.19.0</jcommons-lang.version>
+		<swing-components.version>4.19.0-SNAPSHOT</swing-components.version>
 		<!-- IZPACK-MAVEN-PLUGIN versions -->
 		<izpack.version>5.0.8</izpack.version>
 		<izpack-panel.version>${izpack.version}</izpack-panel.version>
