@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>mvn-ui-parent</artifactId>
-	<version>1.10.0</version>
+	<version>1.11.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2016</inceptionYear>
 
@@ -288,12 +288,6 @@
 		<pluginManagement>
 
 			<plugins>
-
-				<plugin>
-					<groupId>org.codehaus.izpack</groupId>
-					<artifactId>izpack-maven-plugin</artifactId>
-					<version>${izpack-maven-plugin.version}</version>
-				</plugin>
 
 				<plugin>
 					<artifactId>maven-antrun-plugin</artifactId>
