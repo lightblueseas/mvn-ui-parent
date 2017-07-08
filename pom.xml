@@ -82,30 +82,39 @@
 	</issueManagement>
 
 	<properties>
+		<!-- JAVAHELP version -->
 		<javahelp.version>2.0.02</javahelp.version>
+		<!-- SWINGLABS versions -->
 		<swing-layout.version>1.0.3</swing-layout.version>
 		<jxlayer.version>3.0.3</jxlayer.version>
 		<swing-worker.version>1.1</swing-worker.version>
 		<swingx.version>1.6.1</swingx.version>
-		<!-- SPRING versions -->
+		<!-- SPRING version -->
 		<spring.version>4.3.9.RELEASE</spring.version>
+		<!-- XML-APIS version -->
 		<xml-apis.version>1.4.01</xml-apis.version>
 		<!-- EXTENSIONS LIB versions -->
 		<file-worker.version>4.15.0</file-worker.version>
 		<jcommons-lang.version>4.20.0</jcommons-lang.version>
 		<swing-components.version>4.19.0</swing-components.version>
-		<!-- IZPACK-MAVEN-PLUGIN versions -->
+		<!-- Plugin Framework for Java (PF4J) version -->
+		<pf4j.version>1.3.0</pf4j.version>
+		<!-- IZPACK-MAVEN-PLUGIN version -->
 		<izpack.version>5.0.8</izpack.version>
 		<izpack-panel.version>${izpack.version}</izpack-panel.version>
 		<izpack-maven-plugin.version>${izpack.version}</izpack-maven-plugin.version>
 		<!-- Installer variables -->
 		<staging.dir>${project.build.directory}/staging</staging.dir>
 		<izpack.staging>${staging.dir}</izpack.staging>
+		<izpack.staging.dir.custom>${izpack.staging}/custom</izpack.staging.dir.custom>
+		<izpack.staging.dir.lib>${izpack.staging}/lib</izpack.staging.dir.lib>
 		<izpack.dir.app>${basedir}/src/main/izpack</izpack.dir.app>
 		<izpack.installFile>${izpack.dir.app}/install.xml</izpack.installFile>
 		<staging.dir.app>${staging.dir}</staging.dir.app>
-		<!-- Plugin Framework for Java (PF4J) version -->
-		<pf4j.version>1.3.0</pf4j.version>
+		<!-- MAVEN-ANTRUN-PLUGIN variables -->		
+		<dist-path>${basedir}/dist/bin</dist-path>
+		<!-- MAVEN-JAR-PLUGIN variables -->				
+		<manifestFile-path>src/main/resources/META-INF/MANIFEST.MF</manifestFile-path>
 	</properties>
 
 	<dependencyManagement>
@@ -152,7 +161,7 @@
 				<groupId>org.swinglabs</groupId>
 				<artifactId>swing-worker</artifactId>
 				<version>${swing-worker.version}</version>
-			</dependency>			
+			</dependency>
 
 			<dependency>
 				<groupId>org.swinglabs</groupId>
@@ -199,6 +208,66 @@
 		</dependencies>
 
 	</dependencyManagement>
+
+
+	<dependencies>
+		<!-- JAVAHELP DEPENDENCIES -->
+		<dependency>
+			<groupId>javax.help</groupId>
+			<artifactId>javahelp</artifactId>
+		</dependency>
+		<!-- SWINGLABS DEPENDENCIES -->
+		<dependency>
+			<groupId>org.swinglabs</groupId>
+			<artifactId>swing-layout</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.swinglabs</groupId>
+			<artifactId>jxlayer</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.swinglabs</groupId>
+			<artifactId>swing-worker</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.swinglabs</groupId>
+			<artifactId>swingx</artifactId>
+		</dependency>
+		<!-- SPRING DEPENDENCIES -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<!-- EXT-LIBS DEPENDENCIES -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>file-worker</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jcommons-lang</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>swing-components</artifactId>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 
