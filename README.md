@@ -13,6 +13,7 @@ The source code comes under the liberal Apache License V2.0, making mvn-ui-paren
 
 ## Maven Central
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/826c5938fd1f4921b18dfa8196ee127b)](https://www.codacy.com/app/tatjana19/mvn-ui-parent?utm_source=github.com&utm_medium=referral&utm_content=lightblueseas/mvn-ui-parent&utm_campaign=badger)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-ui-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-ui-parent)
 
 ## How to use it
