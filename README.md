@@ -33,7 +33,7 @@ The source code for mvn-ui-parent are on GitHub. Please feel free to fork and se
 
 Create your own fork of [lightblueseas/mvn-ui-parent/fork](https://github.com/lightblueseas/mvn-ui-parent/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/mvn-ui-parent/pull/new/master).
+To share your changes, [submit a pull request](https://github.com/lightblueseas/mvn-ui-parent/pull/new/develop).
 
 ## Contacting the Developers
 
