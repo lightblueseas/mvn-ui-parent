@@ -13,6 +13,7 @@ The source code comes under the liberal Apache License V2.0, making mvn-ui-paren
 
 ## Maven Central
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/826c5938fd1f4921b18dfa8196ee127b)](https://www.codacy.com/app/tatjana19/mvn-ui-parent?utm_source=github.com&utm_medium=referral&utm_content=lightblueseas/mvn-ui-parent&utm_campaign=badger)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-ui-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/mvn-ui-parent)
 
 ## How to use it
@@ -22,7 +23,7 @@ Add as parent project in the `pom.xml` file:
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-ui-parent</artifactId>
-		<version>1.10.0</version>
+		<version>1.12.0</version>
 		<relativePath></relativePath>
 	</parent>	
 
@@ -32,7 +33,7 @@ The source code for mvn-ui-parent are on GitHub. Please feel free to fork and se
 
 Create your own fork of [lightblueseas/mvn-ui-parent/fork](https://github.com/lightblueseas/mvn-ui-parent/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/mvn-ui-parent/pull/new/master).
+To share your changes, [submit a pull request](https://github.com/lightblueseas/mvn-ui-parent/pull/new/develop).
 
 ## Contacting the Developers
 
