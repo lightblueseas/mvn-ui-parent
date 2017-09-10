@@ -675,7 +675,12 @@
 
 		</profile>
 
-		<profile>
+		<profile>		
+			<!--                                                              -
+			  - Use this profile to prepare and release the installer.        -
+			  - When the build is finished the *.jar in the target directory  -
+			  - is the izpack installer and the *-jar-with-dependencies.jar   -
+			  - is the executable application.                                -->
 			<id>prepare-and-release-and-izpack</id>
 			<activation>
 				<property>
