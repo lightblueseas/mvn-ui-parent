@@ -99,6 +99,8 @@
 		<swing-components.version>4.23.0</swing-components.version>
 		<!-- Plugin Framework for Java (PF4J) version -->
 		<pf4j.version>1.3.0</pf4j.version>
+		<!-- LAUNCH4J-MAVEN-PLUGIN version -->
+		<launch4j-maven-plugin.version>1.7.21</launch4j-maven-plugin.version>
 		<!-- IZPACK-MAVEN-PLUGIN version -->
 		<izpack.version>5.1.2</izpack.version>
 		<izpack-panel.version>${izpack.version}</izpack-panel.version>
@@ -381,6 +383,7 @@
 								<!-- base for relative paths in izpack descriptor -->
 								<baseDir>${izpack.staging}</baseDir>
 								<installFile>${izpack.installFile}</installFile>
+								<output>${file-name-with-dependencies-path}</output>
 							</configuration>
 						</execution>
 					</executions>
@@ -399,6 +402,47 @@
 						</dependency>
 
 					</dependencies>
+				</plugin>
+
+				<plugin>
+					<groupId>com.akathist.maven.plugins.launch4j</groupId>
+					<artifactId>launch4j-maven-plugin</artifactId>
+					<version>${launch4j-maven-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>l4j-gui</id>
+							<phase>package</phase>
+							<goals>
+								<goal>launch4j</goal>
+							</goals>
+							<configuration>
+								<headerType>gui</headerType>
+								<jar>target/${file-name-with-dependencies-path}</jar>
+								<outfile>target/${project.artifactId}.exe</outfile>
+								<classPath>
+									<mainClass>com.izforge.izpack.installer.bootstrap.Installer</mainClass>
+								</classPath>
+								<jre>
+									<bundledJre64Bit>false</bundledJre64Bit>
+									<bundledJreAsFallback>false</bundledJreAsFallback>
+									<minVersion>1.6.0</minVersion>
+									<jdkPreference>preferJre</jdkPreference>
+									<runtimeBits>32</runtimeBits>
+								</jre>
+								<versionInfo>
+									<fileVersion>${project.version}</fileVersion>
+									<txtFileVersion>${project.version}</txtFileVersion>
+									<fileDescription>${project.name}</fileDescription>
+									<copyright>C</copyright>
+									<productVersion>${project.version}</productVersion>
+									<txtProductVersion>1.0.0.0</txtProductVersion>
+									<productName>${project.name}</productName>
+									<internalName>${full-app-name}</internalName>
+									<originalFilename>${project.artifactId}.exe</originalFilename>
+								</versionInfo>
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
 
 				<plugin>
@@ -634,6 +678,7 @@
 										<!-- base for relative paths in izpack descriptor -->
 										<baseDir>${izpack.staging}</baseDir>
 										<installFile>${izpack.installFile}</installFile>
+										<output>${file-name-with-dependencies-path}</output>
 									</configuration>
 								</execution>
 							</executions>
@@ -675,12 +720,10 @@
 
 		</profile>
 
-		<profile>		
-			<!--                                                              -
-			  - Use this profile to prepare and release the installer.        -
-			  - When the build is finished the *.jar in the target directory  -
-			  - is the izpack installer and the *-jar-with-dependencies.jar   -
-			  - is the executable application.                                -->
+		<profile>
+			<!-- - - Use this profile to prepare and release the installer. - - When 
+				the build is finished the *.jar in the target directory - - is the izpack 
+				installer and the *-jar-with-dependencies.jar - - is the executable application. -->
 			<id>prepare-and-release-and-izpack</id>
 			<activation>
 				<property>
@@ -822,6 +865,7 @@
 										<!-- base for relative paths in izpack descriptor -->
 										<baseDir>${izpack.staging}</baseDir>
 										<installFile>${izpack.installFile}</installFile>
+										<output>${file-name-with-dependencies-path}</output>
 									</configuration>
 								</execution>
 							</executions>
@@ -840,6 +884,47 @@
 								</dependency>
 
 							</dependencies>
+						</plugin>
+
+						<plugin>
+							<groupId>com.akathist.maven.plugins.launch4j</groupId>
+							<artifactId>launch4j-maven-plugin</artifactId>
+							<version>${launch4j-maven-plugin.version}</version>
+							<executions>
+								<execution>
+									<id>l4j-gui</id>
+									<phase>package</phase>
+									<goals>
+										<goal>launch4j</goal>
+									</goals>
+									<configuration>
+										<headerType>gui</headerType>
+										<jar>target/${file-name-with-dependencies-path}</jar>
+										<outfile>target/${project.artifactId}.exe</outfile>
+										<classPath>
+											<mainClass>com.izforge.izpack.installer.bootstrap.Installer</mainClass>
+										</classPath>
+										<jre>
+											<bundledJre64Bit>false</bundledJre64Bit>
+											<bundledJreAsFallback>false</bundledJreAsFallback>
+											<minVersion>1.6.0</minVersion>
+											<jdkPreference>preferJre</jdkPreference>
+											<runtimeBits>32</runtimeBits>
+										</jre>
+										<versionInfo>
+											<fileVersion>${project.version}</fileVersion>
+											<txtFileVersion>${project.version}</txtFileVersion>
+											<fileDescription>${project.name}</fileDescription>
+											<copyright>C</copyright>
+											<productVersion>${project.version}</productVersion>
+											<txtProductVersion>1.0.0.0</txtProductVersion>
+											<productName>${project.name}</productName>
+											<internalName>${full-app-name}</internalName>
+											<originalFilename>${project.artifactId}.exe</originalFilename>
+										</versionInfo>
+									</configuration>
+								</execution>
+							</executions>
 						</plugin>
 
 					</plugins>
@@ -867,6 +952,11 @@
 					<plugin>
 						<groupId>org.codehaus.izpack</groupId>
 						<artifactId>izpack-maven-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<groupId>com.akathist.maven.plugins.launch4j</groupId>
+						<artifactId>launch4j-maven-plugin</artifactId>
 					</plugin>
 
 				</plugins>
