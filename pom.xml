@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>mvn-ui-parent</artifactId>
-	<version>1.15.0</version>
+	<version>1.15.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2016</inceptionYear>
 
@@ -417,15 +417,15 @@
 							</goals>
 							<configuration>
 								<headerType>gui</headerType>
-								<jar>target/${file-name-with-dependencies-path}</jar>
-								<outfile>target/${project.artifactId}.exe</outfile>
+								<jar>${file-name-with-dependencies-path}</jar>
+								<outfile>dist/launch4j/${project.artifactId}.exe</outfile>
 								<classPath>
 									<mainClass>com.izforge.izpack.installer.bootstrap.Installer</mainClass>
 								</classPath>
 								<jre>
 									<bundledJre64Bit>false</bundledJre64Bit>
 									<bundledJreAsFallback>false</bundledJreAsFallback>
-									<minVersion>1.6.0</minVersion>
+									<minVersion>1.8.0</minVersion>
 									<jdkPreference>preferJre</jdkPreference>
 									<runtimeBits>32</runtimeBits>
 								</jre>
@@ -886,47 +886,6 @@
 							</dependencies>
 						</plugin>
 
-						<plugin>
-							<groupId>com.akathist.maven.plugins.launch4j</groupId>
-							<artifactId>launch4j-maven-plugin</artifactId>
-							<version>${launch4j-maven-plugin.version}</version>
-							<executions>
-								<execution>
-									<id>l4j-gui</id>
-									<phase>package</phase>
-									<goals>
-										<goal>launch4j</goal>
-									</goals>
-									<configuration>
-										<headerType>gui</headerType>
-										<jar>target/${file-name-with-dependencies-path}</jar>
-										<outfile>target/${project.artifactId}.exe</outfile>
-										<classPath>
-											<mainClass>com.izforge.izpack.installer.bootstrap.Installer</mainClass>
-										</classPath>
-										<jre>
-											<bundledJre64Bit>false</bundledJre64Bit>
-											<bundledJreAsFallback>false</bundledJreAsFallback>
-											<minVersion>1.6.0</minVersion>
-											<jdkPreference>preferJre</jdkPreference>
-											<runtimeBits>32</runtimeBits>
-										</jre>
-										<versionInfo>
-											<fileVersion>${project.version}</fileVersion>
-											<txtFileVersion>${project.version}</txtFileVersion>
-											<fileDescription>${project.name}</fileDescription>
-											<copyright>C</copyright>
-											<productVersion>${project.version}</productVersion>
-											<txtProductVersion>1.0.0.0</txtProductVersion>
-											<productName>${project.name}</productName>
-											<internalName>${full-app-name}</internalName>
-											<originalFilename>${project.artifactId}.exe</originalFilename>
-										</versionInfo>
-									</configuration>
-								</execution>
-							</executions>
-						</plugin>
-
 					</plugins>
 
 				</pluginManagement>
@@ -952,11 +911,6 @@
 					<plugin>
 						<groupId>org.codehaus.izpack</groupId>
 						<artifactId>izpack-maven-plugin</artifactId>
-					</plugin>
-
-					<plugin>
-						<groupId>com.akathist.maven.plugins.launch4j</groupId>
-						<artifactId>launch4j-maven-plugin</artifactId>
 					</plugin>
 
 				</plugins>
