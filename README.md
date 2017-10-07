@@ -6,6 +6,7 @@ General parent project for ui java projects.
 
 1. Provides several plugins in the pluginManagement section that are useful for ui swing projects.
 2. Provides several dependencies in the dependencyManagement section for swing, javahelp and izpack for deployment.
+3. Provides profiles for prepare a release that includes an installer and create an *.exe file over the launch4j-maven-plugin.
 
 ## License
 
@@ -23,7 +24,7 @@ Add as parent project in the `pom.xml` file:
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-ui-parent</artifactId>
-		<version>1.14.0</version>
+		<version>1.15.0</version>
 		<relativePath></relativePath>
 	</parent>	
 
