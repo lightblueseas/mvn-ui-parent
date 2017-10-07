@@ -94,8 +94,8 @@
 		<!-- XML-APIS version -->
 		<xml-apis.version>1.4.01</xml-apis.version>
 		<!-- EXTENSIONS LIB versions -->
-		<file-worker.version>4.16.0</file-worker.version>
-		<jcommons-lang.version>4.22.0</jcommons-lang.version>
+		<file-worker.version>4.16.1</file-worker.version>
+		<jcommons-lang.version>4.23.0</jcommons-lang.version>
 		<swing-components.version>4.23.0</swing-components.version>
 		<!-- Plugin Framework for Java (PF4J) version -->
 		<pf4j.version>1.3.0</pf4j.version>
