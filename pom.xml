@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -5,7 +6,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.1.0</version>
+		<version>3.3.0</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -22,71 +23,12 @@
 
 	<url>https://github.com/lightblueseas/mvn-ui-parent</url>
 
-	<licenses>
-
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-
-	</licenses>
-
-	<developers>
-
-		<developer>
-			<id>astrapi69</id>
-			<name>Asterios Raptis</name>
-			<email>astrapi69 at users.sf.net</email>
-			<timezone>Berlin</timezone>
-			<roles>
-				<role>Project manager</role>
-				<role>Developer</role>
-			</roles>
-		</developer>
-
-	</developers>
-
-	<organization>
-		<name>Alpha Ro Group UG (haftungsbeschrängt)</name>
-		<url>http://www.alpharogroup.de/</url>
-	</organization>
-
-	<scm>
-		<connection>scm:git:git:@github.com:lightblueseas/mvn-ui-parent.git</connection>
-		<developerConnection>scm:git:git@github.com:lightblueseas/mvn-ui-parent.git</developerConnection>
-		<url>git:@github.com:lightblueseas/mvn-ui-parent.git</url>
-	</scm>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<name>Nexus Release Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
-
-	<ciManagement>
-		<system>travis-ci</system>
-		<url>https://travis-ci.org/lightblueseas/mvn-ui-parent</url>
-	</ciManagement>
-
-	<issueManagement>
-		<system>github</system>
-		<url>https://github.com/lightblueseas/mvn-ui-parent/issues</url>
-	</issueManagement>
-
 	<properties>
 		<!-- JAVAHELP version -->
-		<javahelp.version>2.0.02</javahelp.version>
+		<javahelp.version>2.0.05</javahelp.version>
 		<!-- SWINGLABS versions -->
 		<swing-layout.version>1.0.3</swing-layout.version>
-		<jxlayer.version>3.0.3</jxlayer.version>
+		<jxlayer.version>3.0.4</jxlayer.version>
 		<swing-worker.version>1.1</swing-worker.version>
 		<swingx.version>1.6.1</swingx.version>
 		<!-- SPRING version -->
@@ -94,8 +36,8 @@
 		<!-- XML-APIS version -->
 		<xml-apis.version>1.4.01</xml-apis.version>
 		<!-- EXTENSIONS LIB versions -->
-		<file-worker.version>4.17.0</file-worker.version>
-		<jcommons-lang.version>4.26.0</jcommons-lang.version>
+		<file-worker.version>4.18.0</file-worker.version>
+		<jcommons-lang.version>4.27.0</jcommons-lang.version>
 		<swing-components.version>4.24.0</swing-components.version>
 		<!-- Plugin Framework for Java (PF4J) version -->
 		<pf4j.version>1.3.0</pf4j.version>
@@ -118,6 +60,50 @@
 		<!-- MAVEN-JAR-PLUGIN variables -->
 		<manifestFile-path>src/main/resources/META-INF/MANIFEST.MF</manifestFile-path>
 	</properties>
+	
+	<developers>
+
+		<developer>
+			<id>astrapi69</id>
+			<name>Asterios Raptis</name>
+			<email>astrapi69 at users.sf.net</email>
+			<roles>
+				<role>Project manager</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>Berlin</timezone>
+		</developer>
+
+	</developers>
+
+	<scm>
+		<connection>scm:git:git:@github.com:lightblueseas/mvn-ui-parent.git</connection>
+		<developerConnection>scm:git:git@github.com:lightblueseas/mvn-ui-parent.git</developerConnection>
+		<url>git:@github.com:lightblueseas/mvn-ui-parent.git</url>
+	</scm>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/lightblueseas/mvn-ui-parent/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/lightblueseas/mvn-ui-parent</url>
+	</ciManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<dependencyManagement>
 
@@ -217,7 +203,6 @@
 
 	</dependencyManagement>
 
-
 	<dependencies>
 		<!-- JAVAHELP DEPENDENCIES -->
 		<dependency>
@@ -311,7 +296,7 @@
 								<tasks>
 									<copy todir="${dist-path}">
 										<fileset dir="${project.build.directory}" includes="**/*.jar">
-											<filename name="${file-name-with-dependencies-path}" />
+											<filename name="${file-name-with-dependencies-path}"></filename>
 										</fileset>
 									</copy>
 								</tasks>
@@ -373,20 +358,6 @@
 				<plugin>
 					<groupId>org.codehaus.izpack</groupId>
 					<artifactId>izpack-maven-plugin</artifactId>
-					<executions>
-						<execution>
-							<phase>package</phase>
-							<goals>
-								<goal>izpack</goal>
-							</goals>
-							<configuration>
-								<!-- base for relative paths in izpack descriptor -->
-								<baseDir>${izpack.staging}</baseDir>
-								<installFile>${izpack.installFile}</installFile>
-								<output>${file-name-with-dependencies-path}</output>
-							</configuration>
-						</execution>
-					</executions>
 					<dependencies>
 
 						<dependency>
@@ -402,6 +373,20 @@
 						</dependency>
 
 					</dependencies>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>izpack</goal>
+							</goals>
+							<configuration>
+								<!-- base for relative paths in izpack descriptor -->
+								<baseDir>${izpack.staging}</baseDir>
+								<installFile>${izpack.installFile}</installFile>
+								<output>${file-name-with-dependencies-path}</output>
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
 
 				<plugin>
@@ -608,7 +593,7 @@
 									<configuration>
 										<tasks>
 											<copy todir="${izpack.staging}">
-												<fileset dir="${basedir}/src/izpack" />
+												<fileset dir="${basedir}/src/izpack"></fileset>
 											</copy>
 										</tasks>
 									</configuration>
@@ -668,20 +653,6 @@
 						<plugin>
 							<groupId>org.codehaus.izpack</groupId>
 							<artifactId>izpack-maven-plugin</artifactId>
-							<executions>
-								<execution>
-									<phase>package</phase>
-									<goals>
-										<goal>izpack</goal>
-									</goals>
-									<configuration>
-										<!-- base for relative paths in izpack descriptor -->
-										<baseDir>${izpack.staging}</baseDir>
-										<installFile>${izpack.installFile}</installFile>
-										<output>${file-name-with-dependencies-path}</output>
-									</configuration>
-								</execution>
-							</executions>
 							<dependencies>
 
 								<dependency>
@@ -697,6 +668,20 @@
 								</dependency>
 
 							</dependencies>
+							<executions>
+								<execution>
+									<phase>package</phase>
+									<goals>
+										<goal>izpack</goal>
+									</goals>
+									<configuration>
+										<!-- base for relative paths in izpack descriptor -->
+										<baseDir>${izpack.staging}</baseDir>
+										<installFile>${izpack.installFile}</installFile>
+										<output>${file-name-with-dependencies-path}</output>
+									</configuration>
+								</execution>
+							</executions>
 						</plugin>
 
 					</plugins>
@@ -795,7 +780,7 @@
 									<configuration>
 										<tasks>
 											<copy todir="${izpack.staging}">
-												<fileset dir="${basedir}/src/izpack" />
+												<fileset dir="${basedir}/src/izpack"></fileset>
 											</copy>
 										</tasks>
 									</configuration>
@@ -855,20 +840,6 @@
 						<plugin>
 							<groupId>org.codehaus.izpack</groupId>
 							<artifactId>izpack-maven-plugin</artifactId>
-							<executions>
-								<execution>
-									<phase>package</phase>
-									<goals>
-										<goal>izpack</goal>
-									</goals>
-									<configuration>
-										<!-- base for relative paths in izpack descriptor -->
-										<baseDir>${izpack.staging}</baseDir>
-										<installFile>${izpack.installFile}</installFile>
-										<output>${file-name-with-dependencies-path}</output>
-									</configuration>
-								</execution>
-							</executions>
 							<dependencies>
 
 								<dependency>
@@ -884,6 +855,20 @@
 								</dependency>
 
 							</dependencies>
+							<executions>
+								<execution>
+									<phase>package</phase>
+									<goals>
+										<goal>izpack</goal>
+									</goals>
+									<configuration>
+										<!-- base for relative paths in izpack descriptor -->
+										<baseDir>${izpack.staging}</baseDir>
+										<installFile>${izpack.installFile}</installFile>
+										<output>${file-name-with-dependencies-path}</output>
+									</configuration>
+								</execution>
+							</executions>
 						</plugin>
 
 					</plugins>
