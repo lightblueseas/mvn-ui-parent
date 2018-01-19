@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.3.0</version>
+		<version>3.5.0</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>mvn-ui-parent</artifactId>
-	<version>1.17.0-SNAPSHOT</version>
+	<version>1.17.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2016</inceptionYear>
 
@@ -32,12 +32,12 @@
 		<swing-worker.version>1.1</swing-worker.version>
 		<swingx.version>1.6.1</swingx.version>
 		<!-- SPRING version -->
-		<spring.version>4.3.9.RELEASE</spring.version>
+		<spring.version>4.3.12.RELEASE</spring.version>
 		<!-- XML-APIS version -->
 		<xml-apis.version>1.4.01</xml-apis.version>
 		<!-- EXTENSIONS LIB versions -->
 		<file-worker.version>4.18.0</file-worker.version>
-		<jcommons-lang.version>4.27.0</jcommons-lang.version>
+		<jcommons-lang.version>4.28.1</jcommons-lang.version>
 		<swing-components.version>4.24.0</swing-components.version>
 		<!-- Plugin Framework for Java (PF4J) version -->
 		<pf4j.version>1.3.0</pf4j.version>

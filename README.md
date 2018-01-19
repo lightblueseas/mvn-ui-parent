@@ -24,7 +24,7 @@ Add as parent project in the `pom.xml` file:
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-ui-parent</artifactId>
-		<version>1.16.0</version>
+		<version>1.17.0</version>
 		<relativePath></relativePath>
 	</parent>	
 
