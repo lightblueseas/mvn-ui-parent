@@ -4,9 +4,11 @@
 Version 1.18.0-SNAPSHOT
 -------------
 
-ADDED:
- 
-- 
+CHANGED:
+
+- update of file-worker version to 4.19.0
+- update of jcommons-lang version to 4.29.0
+- update of swing-components version to 4.25.0
 
 Version 1.17.0
 -------------
