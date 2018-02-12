@@ -4,6 +4,10 @@
 Version 1.18.0-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- icon area created in README.md
+
 CHANGED:
 
 - update of parent version to 3.7.0
