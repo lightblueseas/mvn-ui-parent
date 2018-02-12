@@ -6,9 +6,11 @@ Version 1.18.0-SNAPSHOT
 
 CHANGED:
 
+- update of parent version to 3.7.0
 - update of file-worker version to 4.19.0
 - update of jcommons-lang version to 4.29.0
 - update of swing-components version to 4.25.0
+- removed launch4j maven plugin
 
 Version 1.17.0
 -------------
