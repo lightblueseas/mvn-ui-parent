@@ -51,7 +51,7 @@
 		<!-- Installer variables -->
 		<staging.dir>${project.build.directory}/staging</staging.dir>
 		<izpack.staging>${staging.dir}</izpack.staging>
-		<izpack.staging.dir.custom>${izpack.staging}</izpack.staging.dir.custom>
+		<izpack.staging.dir.custom>${izpack.staging}/custom</izpack.staging.dir.custom>
 		<izpack.staging.dir.lib>${izpack.staging}/lib</izpack.staging.dir.lib>
 		<izpack.dir.app>${basedir}/src/main/izpack</izpack.dir.app>
 		<izpack.installFile>${izpack.dir.app}/install.xml</izpack.installFile>
