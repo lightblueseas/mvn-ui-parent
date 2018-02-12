@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.5.0</version>
+		<version>3.7.0</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -32,7 +32,7 @@
 		<swing-worker.version>1.1</swing-worker.version>
 		<swingx.version>1.6.1</swingx.version>
 		<!-- SPRING version -->
-		<spring.version>4.3.12.RELEASE</spring.version>
+		<spring.version>4.3.14.RELEASE</spring.version>
 		<!-- XML-APIS version -->
 		<xml-apis.version>1.4.01</xml-apis.version>
 		<!-- EXTENSIONS LIB versions -->
@@ -51,7 +51,7 @@
 		<!-- Installer variables -->
 		<staging.dir>${project.build.directory}/staging</staging.dir>
 		<izpack.staging>${staging.dir}</izpack.staging>
-		<izpack.staging.dir.custom>${izpack.staging}/custom</izpack.staging.dir.custom>
+		<izpack.staging.dir.custom>${izpack.staging}</izpack.staging.dir.custom>
 		<izpack.staging.dir.lib>${izpack.staging}/lib</izpack.staging.dir.lib>
 		<izpack.dir.app>${basedir}/src/main/izpack</izpack.dir.app>
 		<izpack.installFile>${izpack.dir.app}/install.xml</izpack.installFile>
@@ -385,47 +385,6 @@
 								<baseDir>${izpack.staging}</baseDir>
 								<installFile>${izpack.installFile}</installFile>
 								<output>${file-name-with-dependencies-path}</output>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-
-				<plugin>
-					<groupId>com.akathist.maven.plugins.launch4j</groupId>
-					<artifactId>launch4j-maven-plugin</artifactId>
-					<version>${launch4j-maven-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>l4j-gui</id>
-							<phase>package</phase>
-							<goals>
-								<goal>launch4j</goal>
-							</goals>
-							<configuration>
-								<headerType>gui</headerType>
-								<jar>${file-name-with-dependencies-path}</jar>
-								<outfile>dist/launch4j/${project.artifactId}.exe</outfile>
-								<classPath>
-									<mainClass>com.izforge.izpack.installer.bootstrap.Installer</mainClass>
-								</classPath>
-								<jre>
-									<bundledJre64Bit>false</bundledJre64Bit>
-									<bundledJreAsFallback>false</bundledJreAsFallback>
-									<minVersion>1.8.0</minVersion>
-									<jdkPreference>preferJre</jdkPreference>
-									<runtimeBits>32</runtimeBits>
-								</jre>
-								<versionInfo>
-									<fileVersion>${project.version}</fileVersion>
-									<txtFileVersion>${project.version}</txtFileVersion>
-									<fileDescription>${project.name}</fileDescription>
-									<copyright>C</copyright>
-									<productVersion>${project.version}</productVersion>
-									<txtProductVersion>1.0.0.0</txtProductVersion>
-									<productName>${project.name}</productName>
-									<internalName>${full-app-name}</internalName>
-									<originalFilename>${project.artifactId}.exe</originalFilename>
-								</versionInfo>
 							</configuration>
 						</execution>
 					</executions>
