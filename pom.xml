@@ -32,14 +32,14 @@
 		<swing-worker.version>1.1</swing-worker.version>
 		<swingx.version>1.6.1</swingx.version>
 		<!-- SPRING version -->
-		<spring.version>4.3.14.RELEASE</spring.version>
+		<spring.version>4.3.15.RELEASE</spring.version>
 		<!-- XML-APIS version -->
 		<xml-apis.version>1.4.01</xml-apis.version>
 		<!-- EXTENSIONS LIB versions -->
 		<file-worker.version>4.19.0</file-worker.version>
-		<jcommons-lang.version>4.29.0</jcommons-lang.version>
+		<jcommons-lang.version>4.30.0</jcommons-lang.version>
 		<!-- SWING-COMPONENTS version -->
-		<swing-components.version>4.25.0</swing-components.version>
+		<swing-components.version>4.26.0</swing-components.version>
 		<!-- Plugin Framework for Java (PF4J) version -->
 		<pf4j.version>1.3.0</pf4j.version>
 		<!-- IZPACK-MAVEN-PLUGIN version -->
@@ -51,14 +51,14 @@
 		<izpack.staging>${staging.dir}</izpack.staging>
 		<izpack.staging.dir.custom>${izpack.staging}/custom</izpack.staging.dir.custom>
 		<izpack.staging.dir.lib>${izpack.staging}/lib</izpack.staging.dir.lib>
-		<izpack.dir.app>${basedir}/src/main/izpack</izpack.dir.app>
 		<izpack.installFile>${izpack.dir.app}/install.xml</izpack.installFile>
+		<izpack.dir.app>${basedir}/src/main/izpack</izpack.dir.app>
 		<staging.dir.app>${staging.dir}/appfiles</staging.dir.app>
 		<!-- MAVEN-ANTRUN-PLUGIN variables -->
 		<dist-path>${basedir}/dist/bin</dist-path>
 		<!-- MAVEN-JAR-PLUGIN variables -->
 		<manifestFile-path>src/main/resources/META-INF/MANIFEST.MF</manifestFile-path>
-		<maven-shade-plugin.version>3.1.0</maven-shade-plugin.version>
+		<maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
 	</properties>
 
 	<developers>
@@ -354,6 +354,7 @@
 				<plugin>
 					<groupId>org.codehaus.izpack</groupId>
 					<artifactId>izpack-maven-plugin</artifactId>
+					<version>${izpack-maven-plugin.version}</version>
 					<extensions>true</extensions>
 					<dependencies>
 
@@ -567,6 +568,35 @@
 					<plugins>
 
 						<plugin>
+							<!-- NOTE: We don't need a groupId specification because the group 
+								is org.apache.maven.plugins ...which is assumed by default. -->
+							<artifactId>maven-assembly-plugin</artifactId>
+							<configuration>
+								<descriptorRefs>
+									<descriptorRef>jar-with-dependencies</descriptorRef>
+								</descriptorRefs>
+								<archive>
+									<manifest>
+										<mainClass>${main-full-app-name}</mainClass>
+									</manifest>
+								</archive>
+							</configuration>
+							<executions>
+								<execution>
+									<id>make-assembly</id>
+									<!-- this is used for inheritance merges -->
+									<phase>package</phase>
+									<!-- append to the packaging phase. -->
+									<goals>
+										<goal>single</goal>
+										<!-- goals == mojos -->
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-antrun-plugin</artifactId>
 							<executions>
 								<execution>
@@ -589,6 +619,7 @@
 						<plugin>
 							<groupId>org.codehaus.izpack</groupId>
 							<artifactId>izpack-maven-plugin</artifactId>
+							<version>${izpack-maven-plugin.version}</version>
 							<extensions>true</extensions>
 
 							<executions>
@@ -618,8 +649,17 @@
 				<plugins>
 
 					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+					</plugin>
+
+					<plugin>
 						<groupId>org.codehaus.izpack</groupId>
 						<artifactId>izpack-maven-plugin</artifactId>
+						<version>${izpack-maven-plugin.version}</version>
 					</plugin>
 
 				</plugins>
@@ -763,6 +803,7 @@
 						<plugin>
 							<groupId>org.codehaus.izpack</groupId>
 							<artifactId>izpack-maven-plugin</artifactId>
+							<version>${izpack-maven-plugin.version}</version>
 							<dependencies>
 
 								<dependency>
@@ -819,6 +860,7 @@
 					<plugin>
 						<groupId>org.codehaus.izpack</groupId>
 						<artifactId>izpack-maven-plugin</artifactId>
+						<version>${izpack-maven-plugin.version}</version>
 					</plugin>
 
 				</plugins>
@@ -984,14 +1026,14 @@
 										</filters>
 										<finalName>${full-app-name}</finalName>
 										<transformers>
-											<transformer
-												implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-												<manifestEntries>
-													<Main-Class>${main-full-app-name}</Main-Class>
-													<X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK>
-													<X-Compile-Target-JDK>${maven.compile.target}</X-Compile-Target-JDK>
-												</manifestEntries>
-											</transformer>
+<!-- 											<transformer -->
+<!-- 												implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"> -->
+<!-- 												<manifestEntries> -->
+<!-- 													<Main-Class>${main-full-app-name}</Main-Class> -->
+<!-- 													<X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK> -->
+<!-- 													<X-Compile-Target-JDK>${maven.compile.target}</X-Compile-Target-JDK> -->
+<!-- 												</manifestEntries> -->
+<!-- 											</transformer> -->
 											<transformer
 												implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
 												<resource>META-INF/spring.handlers</resource>
