@@ -1,9 +1,13 @@
 ## Change log
 ----------------------
 
-Version 1.19.0-SNAPSHOT
+Version 1.19-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of parent version to 3.11
+- removed unneeded .0 at the end of version
 
 
 Version 1.18.0
