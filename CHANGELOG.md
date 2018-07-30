@@ -6,7 +6,7 @@ Version 1.19-SNAPSHOT
 
 CHANGED:
 
-- update of parent version to 3.11
+- update of parent version to 4.1
 - removed unneeded .0 at the end of version
 
 
