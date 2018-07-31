@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -5,12 +6,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.27.0</version>
+		<version>4.1</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>mvn-ui-parent</artifactId>
-	<version>1.11.0</version>
+	<version>1.19</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2016</inceptionYear>
 
@@ -22,85 +23,27 @@
 
 	<url>https://github.com/lightblueseas/mvn-ui-parent</url>
 
-	<licenses>
-
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-
-	</licenses>
-
-	<developers>
-
-		<developer>
-			<id>astrapi69</id>
-			<name>Asterios Raptis</name>
-			<email>astrapi69 at users.sf.net</email>
-			<timezone>Berlin</timezone>
-			<roles>
-				<role>Project manager</role>
-				<role>Developer</role>
-			</roles>
-		</developer>
-
-	</developers>
-
-	<organization>
-		<name>Alpha Ro Group UG (haftungsbeschrängt)</name>
-		<url>http://www.alpharogroup.de/</url>
-	</organization>
-
-	<scm>
-		<connection>scm:git:git:@github.com:lightblueseas/mvn-ui-parent.git</connection>
-		<developerConnection>scm:git:git@github.com:lightblueseas/mvn-ui-parent.git</developerConnection>
-		<url>git:@github.com:lightblueseas/mvn-ui-parent.git</url>
-	</scm>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<name>Nexus Release Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
-
-	<ciManagement>
-		<system>travis-ci</system>
-		<url>https://travis-ci.org/lightblueseas/mvn-ui-parent</url>
-	</ciManagement>
-
-	<issueManagement>
-		<system>github</system>
-		<url>https://github.com/lightblueseas/mvn-ui-parent/issues</url>
-	</issueManagement>
-
 	<properties>
 		<!-- JAVAHELP version -->
-		<javahelp.version>2.0.02</javahelp.version>
+		<javahelp.version>2.0.05</javahelp.version>
 		<!-- SWINGLABS versions -->
 		<swing-layout.version>1.0.3</swing-layout.version>
-		<jxlayer.version>3.0.3</jxlayer.version>
+		<jxlayer.version>3.0.4</jxlayer.version>
 		<swing-worker.version>1.1</swing-worker.version>
 		<swingx.version>1.6.1</swingx.version>
 		<!-- SPRING version -->
-		<spring.version>4.3.9.RELEASE</spring.version>
+		<spring.version>4.3.15.RELEASE</spring.version>
 		<!-- XML-APIS version -->
 		<xml-apis.version>1.4.01</xml-apis.version>
 		<!-- EXTENSIONS LIB versions -->
-		<file-worker.version>4.15.0</file-worker.version>
-		<jcommons-lang.version>4.20.0</jcommons-lang.version>
-		<swing-components.version>4.22.0</swing-components.version>
+		<file-worker.version>4.22</file-worker.version>
+		<jcommons-lang.version>4.34</jcommons-lang.version>
+		<!-- SWING-COMPONENTS version -->
+		<swing-components.version>4.28</swing-components.version>
 		<!-- Plugin Framework for Java (PF4J) version -->
 		<pf4j.version>1.3.0</pf4j.version>
 		<!-- IZPACK-MAVEN-PLUGIN version -->
-		<izpack.version>5.0.8</izpack.version>
+		<izpack.version>5.1.3</izpack.version>
 		<izpack-panel.version>${izpack.version}</izpack-panel.version>
 		<izpack-maven-plugin.version>${izpack.version}</izpack-maven-plugin.version>
 		<!-- Installer variables -->
@@ -108,14 +51,59 @@
 		<izpack.staging>${staging.dir}</izpack.staging>
 		<izpack.staging.dir.custom>${izpack.staging}/custom</izpack.staging.dir.custom>
 		<izpack.staging.dir.lib>${izpack.staging}/lib</izpack.staging.dir.lib>
-		<izpack.dir.app>${basedir}/src/main/izpack</izpack.dir.app>
 		<izpack.installFile>${izpack.dir.app}/install.xml</izpack.installFile>
-		<staging.dir.app>${staging.dir}</staging.dir.app>
+		<izpack.dir.app>${basedir}/src/main/izpack</izpack.dir.app>
+		<staging.dir.app>${staging.dir}/appfiles</staging.dir.app>
 		<!-- MAVEN-ANTRUN-PLUGIN variables -->
 		<dist-path>${basedir}/dist/bin</dist-path>
 		<!-- MAVEN-JAR-PLUGIN variables -->
 		<manifestFile-path>src/main/resources/META-INF/MANIFEST.MF</manifestFile-path>
+		<maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
 	</properties>
+
+	<developers>
+
+		<developer>
+			<id>astrapi69</id>
+			<name>Asterios Raptis</name>
+			<email>astrapi69 at users.sf.net</email>
+			<roles>
+				<role>Project manager</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>Berlin</timezone>
+		</developer>
+
+	</developers>
+
+	<scm>
+		<connection>scm:git:git:@github.com:lightblueseas/mvn-ui-parent.git</connection>
+		<developerConnection>scm:git:git@github.com:lightblueseas/mvn-ui-parent.git</developerConnection>
+		<url>git:@github.com:lightblueseas/mvn-ui-parent.git</url>
+	</scm>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/lightblueseas/mvn-ui-parent/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/lightblueseas/mvn-ui-parent</url>
+	</ciManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<dependencyManagement>
 
@@ -205,10 +193,15 @@
 				<version>${spring.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
 		</dependencies>
 
 	</dependencyManagement>
-
 
 	<dependencies>
 		<!-- JAVAHELP DEPENDENCIES -->
@@ -299,15 +292,11 @@
 								<goal>run</goal>
 							</goals>
 							<configuration>
-
-								<tasks>
-									<copy todir="${dist-path}">
-										<fileset dir="${project.build.directory}" includes="**/*.jar">
-											<filename name="${file-name-with-dependencies-path}" />
-										</fileset>
+								<target>
+									<copy todir="${staging.dir}">
+										<fileset dir="${izpack.dir.app}" />
 									</copy>
-								</tasks>
-
+								</target>
 							</configuration>
 						</execution>
 					</executions>
@@ -365,19 +354,8 @@
 				<plugin>
 					<groupId>org.codehaus.izpack</groupId>
 					<artifactId>izpack-maven-plugin</artifactId>
-					<executions>
-						<execution>
-							<phase>package</phase>
-							<goals>
-								<goal>izpack</goal>
-							</goals>
-							<configuration>
-								<!-- base for relative paths in izpack descriptor -->
-								<baseDir>${izpack.staging}</baseDir>
-								<installFile>${izpack.installFile}</installFile>
-							</configuration>
-						</execution>
-					</executions>
+					<version>${izpack-maven-plugin.version}</version>
+					<extensions>true</extensions>
 					<dependencies>
 
 						<dependency>
@@ -393,6 +371,24 @@
 						</dependency>
 
 					</dependencies>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>izpack</goal>
+							</goals>
+							<configuration>
+								<!-- base for relative paths in izpack descriptor -->
+								<baseDir>${izpack.staging}</baseDir>
+								<installFile>${izpack.installFile}</installFile>
+								<outputDirectory>${project.build.directory}</outputDirectory>
+								<enableOverrideArtifact>true</enableOverrideArtifact>
+								<mkdirs>true</mkdirs>
+								<autoIncludeUrl>false</autoIncludeUrl>
+								<autoIncludeDevelopers>false</autoIncludeDevelopers>
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
 
 				<plugin>
@@ -436,6 +432,31 @@
 								<goal>single</goal>
 								<!-- goals == mojos -->
 							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>${maven-shade-plugin.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>shade</goal>
+							</goals>
+							<configuration>
+								<transformers>
+									<transformer
+										implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+										<resource>META-INF/spring.handlers</resource>
+									</transformer>
+									<transformer
+										implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+										<resource>META-INF/spring.schemas</resource>
+									</transformer>
+								</transformers>
+							</configuration>
 						</execution>
 					</executions>
 				</plugin>
@@ -547,69 +568,49 @@
 					<plugins>
 
 						<plugin>
-							<artifactId>maven-antrun-plugin</artifactId>
+							<!-- NOTE: We don't need a groupId specification because the group 
+								is org.apache.maven.plugins ...which is assumed by default. -->
+							<artifactId>maven-assembly-plugin</artifactId>
+							<configuration>
+								<descriptorRefs>
+									<descriptorRef>jar-with-dependencies</descriptorRef>
+								</descriptorRefs>
+								<archive>
+									<manifest>
+										<mainClass>${main-full-app-name}</mainClass>
+									</manifest>
+								</archive>
+							</configuration>
 							<executions>
 								<execution>
-									<id>create-staging-area</id>
-									<phase>process-resources</phase>
+									<id>make-assembly</id>
+									<!-- this is used for inheritance merges -->
+									<phase>package</phase>
+									<!-- append to the packaging phase. -->
 									<goals>
-										<goal>run</goal>
+										<goal>single</goal>
+										<!-- goals == mojos -->
 									</goals>
-									<configuration>
-										<tasks>
-											<copy todir="${izpack.staging}">
-												<fileset dir="${basedir}/src/izpack" />
-											</copy>
-										</tasks>
-									</configuration>
 								</execution>
 							</executions>
 						</plugin>
 
 						<plugin>
-							<artifactId>maven-dependency-plugin</artifactId>
-							<configuration>
-								<excludeTransitive>false</excludeTransitive>
-								<!-- reference our custom panels jar in our installer descriptor 
-									without its version -->
-								<stripVersion>true</stripVersion>
-								<overWriteReleases>true</overWriteReleases>
-								<overWriteSnapshots>true</overWriteSnapshots>
-								<overWriteIfNewer>true</overWriteIfNewer>
-								<excludeScope>system</excludeScope>
-							</configuration>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-antrun-plugin</artifactId>
 							<executions>
 								<execution>
-									<!-- copy *application* jars to izpack staging lib -->
-									<id>copy-product-dependencies</id>
-									<phase>prepare-package</phase>
+									<id>default-cli</id>
+									<phase>process-resources</phase>
 									<goals>
-										<goal>copy-dependencies</goal>
+										<goal>run</goal>
 									</goals>
 									<configuration>
-										<outputDirectory>${izpack.staging.dir.lib}</outputDirectory>
-										<excludeScope>system</excludeScope>
-										<!-- this excludes tools.jar, e.g. -->
-										<excludeArtifactIds>${project.artifactId}</excludeArtifactIds>
-										<!-- IMPORTANT: don't copy custom panels where our application 
-											jars live -->
-										<excludeGroupIds>org.codehaus.izpack</excludeGroupIds>
-										<!-- IMPORTANT: we don't want to copy the IzPack dependency where 
-											our application jars live -->
-									</configuration>
-								</execution>
-								<execution>
-									<!-- copy izpack custom (custom panels, etc.) jars to izpack staging 
-										custom -->
-									<id>copy-izpack-dependencies</id>
-									<phase>prepare-package</phase>
-									<goals>
-										<goal>copy-dependencies</goal>
-									</goals>
-									<configuration>
-										<outputDirectory>${izpack.staging.dir.custom}</outputDirectory>
-										<includeArtifactIds>${project.artifactId}</includeArtifactIds>
-										<!-- IMPORTANT: this causes *only* our custom panels to be copied -->
+										<target>
+											<copy todir="${staging.dir}">
+												<fileset dir="${izpack.dir.app}" />
+											</copy>
+										</target>
 									</configuration>
 								</execution>
 							</executions>
@@ -618,6 +619,9 @@
 						<plugin>
 							<groupId>org.codehaus.izpack</groupId>
 							<artifactId>izpack-maven-plugin</artifactId>
+							<version>${izpack-maven-plugin.version}</version>
+							<extensions>true</extensions>
+
 							<executions>
 								<execution>
 									<phase>package</phase>
@@ -628,24 +632,14 @@
 										<!-- base for relative paths in izpack descriptor -->
 										<baseDir>${izpack.staging}</baseDir>
 										<installFile>${izpack.installFile}</installFile>
+										<outputDirectory>${project.build.directory}</outputDirectory>
+										<enableOverrideArtifact>true</enableOverrideArtifact>
+										<mkdirs>true</mkdirs>
+										<autoIncludeUrl>false</autoIncludeUrl>
+										<autoIncludeDevelopers>false</autoIncludeDevelopers>
 									</configuration>
 								</execution>
 							</executions>
-							<dependencies>
-
-								<dependency>
-									<groupId>org.codehaus.izpack</groupId>
-									<artifactId>izpack-panel</artifactId>
-									<version>${izpack.version}</version>
-								</dependency>
-
-								<dependency>
-									<groupId>${project.groupId}</groupId>
-									<artifactId>${project.artifactId}</artifactId>
-									<version>${project.version}</version>
-								</dependency>
-
-							</dependencies>
 						</plugin>
 
 					</plugins>
@@ -655,12 +649,17 @@
 				<plugins>
 
 					<plugin>
-						<artifactId>maven-dependency-plugin</artifactId>
+						<artifactId>maven-assembly-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
 					</plugin>
 
 					<plugin>
 						<groupId>org.codehaus.izpack</groupId>
 						<artifactId>izpack-maven-plugin</artifactId>
+						<version>${izpack-maven-plugin.version}</version>
 					</plugin>
 
 				</plugins>
@@ -670,6 +669,9 @@
 		</profile>
 
 		<profile>
+			<!-- - - Use this profile to prepare and release the installer. - - When 
+				the build is finished the *.jar in the target directory - - is the izpack 
+				installer and the *-jar-with-dependencies.jar - - is the executable application. -->
 			<id>prepare-and-release-and-izpack</id>
 			<activation>
 				<property>
@@ -741,7 +743,7 @@
 									<configuration>
 										<tasks>
 											<copy todir="${izpack.staging}">
-												<fileset dir="${basedir}/src/izpack" />
+												<fileset dir="${basedir}/src/izpack"></fileset>
 											</copy>
 										</tasks>
 									</configuration>
@@ -801,19 +803,7 @@
 						<plugin>
 							<groupId>org.codehaus.izpack</groupId>
 							<artifactId>izpack-maven-plugin</artifactId>
-							<executions>
-								<execution>
-									<phase>package</phase>
-									<goals>
-										<goal>izpack</goal>
-									</goals>
-									<configuration>
-										<!-- base for relative paths in izpack descriptor -->
-										<baseDir>${izpack.staging}</baseDir>
-										<installFile>${izpack.installFile}</installFile>
-									</configuration>
-								</execution>
-							</executions>
+							<version>${izpack-maven-plugin.version}</version>
 							<dependencies>
 
 								<dependency>
@@ -829,6 +819,20 @@
 								</dependency>
 
 							</dependencies>
+							<executions>
+								<execution>
+									<phase>package</phase>
+									<goals>
+										<goal>izpack</goal>
+									</goals>
+									<configuration>
+										<!-- base for relative paths in izpack descriptor -->
+										<baseDir>${izpack.staging}</baseDir>
+										<installFile>${izpack.installFile}</installFile>
+										<output>${file-name-with-dependencies-path}</output>
+									</configuration>
+								</execution>
+							</executions>
 						</plugin>
 
 					</plugins>
@@ -856,6 +860,202 @@
 					<plugin>
 						<groupId>org.codehaus.izpack</groupId>
 						<artifactId>izpack-maven-plugin</artifactId>
+						<version>${izpack-maven-plugin.version}</version>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+		<profile>
+
+			<id>prepare-for-release-with-jar-plugin</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<build>
+
+				<pluginManagement>
+
+					<plugins>
+
+						<plugin>
+							<artifactId>maven-dependency-plugin</artifactId>
+							<configuration>
+								<excludeTransitive>false</excludeTransitive>
+								<!-- reference our custom panels jar in our installer descriptor 
+									without its version -->
+								<stripVersion>true</stripVersion>
+								<overWriteReleases>true</overWriteReleases>
+								<overWriteSnapshots>true</overWriteSnapshots>
+								<overWriteIfNewer>true</overWriteIfNewer>
+								<excludeScope>system</excludeScope>
+							</configuration>
+							<executions>
+								<execution>
+									<!-- copy *application* jars to izpack staging lib -->
+									<id>copy-product-dependencies</id>
+									<phase>prepare-package</phase>
+									<goals>
+										<goal>copy-dependencies</goal>
+									</goals>
+									<configuration>
+										<outputDirectory>${izpack.staging.dir.lib}</outputDirectory>
+										<excludeScope>system</excludeScope>
+										<!-- this excludes tools.jar, e.g. -->
+										<excludeArtifactIds>${project.artifactId}</excludeArtifactIds>
+										<!-- IMPORTANT: don't copy custom panels where our application 
+											jars live -->
+										<excludeGroupIds>org.codehaus.izpack</excludeGroupIds>
+										<!-- IMPORTANT: we don't want to copy the IzPack dependency where 
+											our application jars live -->
+									</configuration>
+								</execution>
+								<execution>
+									<!-- copy izpack custom (custom panels, etc.) jars to izpack staging 
+										custom -->
+									<id>copy-izpack-dependencies</id>
+									<phase>prepare-package</phase>
+									<goals>
+										<goal>copy-dependencies</goal>
+									</goals>
+									<configuration>
+										<outputDirectory>${izpack.staging.dir.custom}</outputDirectory>
+										<includeArtifactIds>${project.artifactId}</includeArtifactIds>
+										<!-- IMPORTANT: this causes *only* our custom panels to be copied -->
+									</configuration>
+								</execution>
+							</executions>
+						</plugin>
+
+						<plugin>
+							<artifactId>maven-jar-plugin</artifactId>
+							<configuration>
+								<archive>
+									<manifest>
+										<addClasspath>true</addClasspath>
+										<classpathPrefix>staging/</classpathPrefix>
+										<mainClass>${main-full-app-name}</mainClass>
+										<packageName>${main-app-package-name}</packageName>
+									</manifest>
+								</archive>
+							</configuration>
+						</plugin>
+
+					</plugins>
+
+				</pluginManagement>
+
+				<plugins>
+
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<artifactId>maven-jar-plugin</artifactId>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+
+		<profile>
+
+			<id>prepare-and-release-with-shade</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<build>
+
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>false</filtering>
+					</resource>
+				</resources>
+
+				<pluginManagement>
+
+					<plugins>
+
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-shade-plugin</artifactId>
+							<version>${maven-shade-plugin.version}</version>
+							<executions>
+								<execution>
+									<phase>package</phase>
+									<goals>
+										<goal>shade</goal>
+									</goals>
+									<configuration>
+										<shadedArtifactAttached>true</shadedArtifactAttached>
+										<shadedClassifierName>stand-alone</shadedClassifierName>
+										<artifactSet>
+											<excludes>
+												<exclude>org.slf4j:slf4j-api:jar:</exclude>
+												<exclude>org.slf4j:slf4j-log4j12:jar:</exclude>
+												<exclude>org.slf4j:jcl-over-slf4j:jar:</exclude>
+												<exclude>commons-logging:commons-logging:jar:</exclude>
+												<exclude>commons-logging:commons-logging-api:jar:</exclude>
+											</excludes>
+										</artifactSet>
+										<filters>
+											<filter>
+												<artifact>*:*</artifact>
+												<excludes>
+													<exclude>META-INF/*.SF</exclude>
+													<exclude>META-INF/*.DSA</exclude>
+													<exclude>META-INF/*.RSA</exclude>
+												</excludes>
+											</filter>
+										</filters>
+										<finalName>${full-app-name}</finalName>
+										<transformers>
+<!-- 											<transformer -->
+<!-- 												implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"> -->
+<!-- 												<manifestEntries> -->
+<!-- 													<Main-Class>${main-full-app-name}</Main-Class> -->
+<!-- 													<X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK> -->
+<!-- 													<X-Compile-Target-JDK>${maven.compile.target}</X-Compile-Target-JDK> -->
+<!-- 												</manifestEntries> -->
+<!-- 											</transformer> -->
+											<transformer
+												implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+												<resource>META-INF/spring.handlers</resource>
+											</transformer>
+											<transformer
+												implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+												<resource>META-INF/spring.schemas</resource>
+											</transformer>
+										</transformers>
+									</configuration>
+								</execution>
+							</executions>
+						</plugin>
+
+					</plugins>
+
+				</pluginManagement>
+
+				<plugins>
+
+					<plugin>
+						<artifactId>maven-shade-plugin</artifactId>
 					</plugin>
 
 				</plugins>
